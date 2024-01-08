@@ -23,6 +23,16 @@ class TapClinicalTrials(Tap):
             th.DateType,
             description="Earliest date to get data from",
         ),
+        th.Property(
+            "condition",
+            th.StringType,
+            description="Conditions or disease query",
+        ),
+        th.Property(
+            "sponsor",
+            th.StringType,
+            description="Sponsor query",
+        ),
     ).to_dict()
 
     def get_studies_schema(self) -> dict[str, t.Any]:

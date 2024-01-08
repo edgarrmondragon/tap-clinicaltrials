@@ -1,5 +1,7 @@
 """Stream type classes for tap-clinicaltrials."""
 
+# ruff: noqa: ERA001
+
 from __future__ import annotations
 
 import typing as t
@@ -58,14 +60,20 @@ class Studies(RESTStream[str]):
         if start_date := self.get_starting_replication_key_value(context):
             params["filter.advanced"] = f"AREA[protocolSection.statusModule.lastUpdateSubmitDate]RANGE[{start_date}, MAX]"
 
-        fields = [".".join(field[1::2]) for field, selected in self.mask.items() if selected and field and field not in self.exclude_fields]
-        fields.extend(
-            [
-                ("protocolSection.identificationModule.nctId"),
-                ("protocolSection.statusModule.lastUpdateSubmitDate"),
-            ]
-        )
-        params["fields"] = ",".join(fields)
+        # fields = [".".join(field[1::2]) for field, selected in self.mask.items() if selected and field and field not in self.exclude_fields]
+        # fields.extend(
+        #     [
+        #         ("protocolSection.identificationModule.nctId"),
+        #         ("protocolSection.statusModule.lastUpdateSubmitDate"),
+        #     ]
+        # )
+        # params["fields"] = ",".join(fields)
+
+        if condition := self.config.get("condition"):
+            params["query.cond"] = condition
+
+        if sponsor := self.config.get("sponsor"):
+            params["query.spons"] = sponsor
 
         return params
 
