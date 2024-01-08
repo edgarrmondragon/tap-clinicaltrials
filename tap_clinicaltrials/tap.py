@@ -20,8 +20,8 @@ class TapClinicalTrials(Tap):
     config_jsonschema = th.PropertiesList(
         th.Property(
             "start_date",
-            th.DateTimeType,
-            description="Earliest datetime to get data from",
+            th.DateType,
+            description="Earliest date to get data from",
         ),
     ).to_dict()
 
