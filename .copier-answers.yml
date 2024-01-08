@@ -1,0 +1,24 @@
+# Changes here will be overwritten by Copier
+_commit: v0.1.0a5
+_src_path: gh:edgarrmondragon/singer-tap-copier-template
+author_email: edgarrmondragon@hey.com
+author_fullname: Edgar Ramírez-Mondragón
+author_username: edgarrmondragon
+dependabot_update_time: '10:00'
+dependabot_update_timezone: Etc/UTC
+python_main_version: '3.11'
+repository_name: tap-clinicaltrials
+repository_namespace: edgarrmondragon
+repository_provider: github.com
+repository_visibility: private
+tap_auth_method: Custom or N/A
+tap_id: tap-clinicaltrials
+tap_package_command_line_name: tap-clinicaltrials
+tap_package_distribution_name: tap-clinicaltrials
+tap_package_import_name: tap_clinicaltrials
+tap_source_description: Online database about clinical research studies to the public,
+    researchers, and health care professionals
+tap_source_id: ClinicalTrials
+tap_source_name: ClinicalTrials.gov
+tap_stream_type: REST
+vscode_files: true

@@ -1,0 +1,30 @@
+version: 1
+send_anonymous_usage_stats: false
+project_id: tap-clinicaltrials
+default_environment: dev
+environments:
+- name: dev
+plugins:
+  extractors:
+  - name: tap-clinicaltrials
+    label: ClinicalTrials.gov
+    namespace: clinicaltrials
+    description: Online database about clinical research studies to the public, researchers, and health care professionals
+    repository: https://github.com/edgarrmondragon/tap-clinicaltrials
+    docs: https://github.com/edgarrmondragon/tap-clinicaltrials#readme
+    pip_url: -e .
+    capabilities:
+    - state
+    - catalog
+    - discover
+    settings:
+    - name: start_date
+      kind: date_iso8601
+      label: Start Date
+      description: Earliest date to get data from
+    config:
+      start_date: "2024-01-01"
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
