@@ -44,6 +44,7 @@ optional-dependencies.testing = [
 ]
 optional-dependencies.typing = [
   "mypy",
+  "types-requests",
 ]
 urls.Documentation = "https://github.com/edgarrmondragon/tap-clinicaltrials#readme"
 urls.Homepage = "https://github.com/edgarrmondragon/tap-clinicaltrials"

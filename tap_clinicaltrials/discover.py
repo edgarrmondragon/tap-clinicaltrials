@@ -58,7 +58,7 @@ def _metadata_item_to_json_schema(item: dict[str, t.Any]) -> dict[str, t.Any]:
         result["description"] = item["definition"]
 
     if rules != "Required":
-        result["type"] = [result["type"], "null"]
+        result["type"] = [result["type"], "null"]  # type: ignore[list-item]
 
     return result
 

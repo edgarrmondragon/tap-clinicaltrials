@@ -37,7 +37,7 @@ class Studies(RESTStream[str]):
 
     def get_url_params(
         self,
-        context: dict | None,
+        context: dict[str, t.Any] | None,
         next_page_token: str | None,
     ) -> dict[str, t.Any] | str:
         """Return a dictionary of parameters to use in the request URL.
@@ -73,7 +73,7 @@ class Studies(RESTStream[str]):
         self,
         row: dict[str, t.Any],
         context: dict[str, t.Any] | None = None,  # noqa: ARG002
-    ) -> dict | None:
+    ) -> dict[str, t.Any] | None:
         """Return a modified data row."""
         row["nctId"] = row["protocolSection"]["identificationModule"]["nctId"]
         row["lastUpdateSubmitDate"] = row["protocolSection"]["statusModule"]["lastUpdateSubmitDate"]

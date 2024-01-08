@@ -2,14 +2,14 @@
 
 from __future__ import annotations
 
-from typing import Any
+import typing as t
 
 from singer_sdk.testing import SuiteConfig, get_tap_test_class
 
 from tap_clinicaltrials.discover import metadata_to_json_schema
 from tap_clinicaltrials.tap import TapClinicalTrials
 
-SAMPLE_CONFIG: dict[str, Any] = {"start_date": "2023-06-01"}
+SAMPLE_CONFIG: dict[str, t.Any] = {"start_date": "2023-06-01"}
 
 TestTapClinicalTrials = get_tap_test_class(
     TapClinicalTrials,
@@ -20,9 +20,9 @@ TestTapClinicalTrials = get_tap_test_class(
 )
 
 
-def test_metadata_to_json_schema():
+def test_metadata_to_json_schema() -> None:
     """Test metadata_to_json_schema."""
-    metadata = [
+    metadata: list[dict[str, t.Any]] = [
         {
             "name": "field_1",
             "sourceType": "STRUCT",
