@@ -31,7 +31,7 @@ plugins:
       label: Sponsor
       description: Sponsor to query for
     config:
-      start_date: '2024-01-01'
+      start_date: '2023-01-01'
     repository: https://github.com/edgarrmondragon/tap-clinicaltrials
   loaders:
   - name: target-jsonl
