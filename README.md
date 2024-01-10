@@ -35,48 +35,48 @@ You can easily run `tap-clinicaltrials` by itself or in a pipeline using [Meltan
 
 1. Clone the repo and `cd` into it:
 
-```bash
-git clone https://github.com/edgarrmondragon/tap-clinicaltrials.git
-cd tap-clinicaltrials
-```
+   ```bash
+   git clone https://github.com/edgarrmondragon/tap-clinicaltrials.git
+   cd tap-clinicaltrials
+   ```
 
 1. Make sure you have [Meltano](https://docs.meltano.com/guide/installation-guide) installed
 
 1. Install all plugins
 
-```bash
-meltano install
-```
+   ```bash
+   meltano install
+   ```
 
 1. Configure the `tap-clinicaltrials` tap:
 
-```bash
-meltano config tap-clinicaltrials set start_date '2020-01-01'
-meltano config tap-clinicaltrials set condition 'COVID-19'
-meltano config tap-clinicaltrials set sponsor 'Pfizer'
-```
+   ```bash
+   meltano config tap-clinicaltrials set start_date '2020-01-01'
+   meltano config tap-clinicaltrials set condition 'COVID-19'
+   meltano config tap-clinicaltrials set sponsor 'Pfizer'
+   ```
 
 1. Run a test `tap-clinicaltrials` extraction
 
-```bash
-meltano run tap-clinicaltrials target-duckdb
-```
+   ```bash
+   meltano run tap-clinicaltrials target-duckdb
+   ```
 
 1. That's it! Check the data
 
-```console
-$ duckdb output/warehouse.duckdb -c "select nctid, lastUpdateSubmitDate, protocolsection->>'$.identificationModule.briefTitle' from clinicaltrials.studies limit 5;
-┌─────────────┬──────────────────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│    nctid    │ lastupdatesubmitdate │                      (protocolsection ->> '$.identificationModule.briefTitle')                      │
-│   varchar   │       varchar        │                                               varchar                                               │
-├─────────────┼──────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ NCT06156215 │ 2023-12-06           │ PROmotion of COVID-19 BOOSTer VA(X)Ccination in the Emergency Department - PROBOOSTVAXED            │
-│ NCT05487040 │ 2023-12-06           │ A Study to Measure the Amount of Study Medicine in Blood in Adult Participants With COVID-19 and …  │
-│ NCT06163677 │ 2023-12-07           │ A Study to Look at the Health Outcomes of Patients With COVID-19 and Influenza.                     │
-│ NCT05032976 │ 2023-12-07           │ Korea Comirnaty Post-marketing Surveillance                                                         │
-│ NCT05596734 │ 2023-12-11           │ A Study to Evaluate the Safety, Tolerability, and Immunogenicity of Combined Modified RNA Vaccine…  │
-└─────────────┴──────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────┘
-```
+   ```console
+   $ duckdb output/warehouse.duckdb -c "select nctid, lastUpdateSubmitDate, protocolsection->>'$.identificationModule.briefTitle' from clinicaltrials.studies limit 5;
+   ┌─────────────┬──────────────────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+   │    nctid    │ lastupdatesubmitdate │                      (protocolsection ->> '$.identificationModule.briefTitle')                      │
+   │   varchar   │       varchar        │                                               varchar                                               │
+   ├─────────────┼──────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────┤
+   │ NCT06156215 │ 2023-12-06           │ PROmotion of COVID-19 BOOSTer VA(X)Ccination in the Emergency Department - PROBOOSTVAXED            │
+   │ NCT05487040 │ 2023-12-06           │ A Study to Measure the Amount of Study Medicine in Blood in Adult Participants With COVID-19 and …  │
+   │ NCT06163677 │ 2023-12-07           │ A Study to Look at the Health Outcomes of Patients With COVID-19 and Influenza.                     │
+   │ NCT05032976 │ 2023-12-07           │ Korea Comirnaty Post-marketing Surveillance                                                         │
+   │ NCT05596734 │ 2023-12-11           │ A Study to Evaluate the Safety, Tolerability, and Immunogenicity of Combined Modified RNA Vaccine…  │
+   └─────────────┴──────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+   ```
 
 ### Executing the Tap Directly
 
