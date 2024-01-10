@@ -27,6 +27,42 @@ Built with the [Meltano Tap SDK](https://sdk.meltano.com) for Singer Taps.
 
 A full list of supported settings and capabilities is available by running: `tap-clinicaltrials --about`
 
+## Installation
+
+### In a Meltano project
+
+#### Using a direct reference
+
+```bash
+meltano add extractor tap-clinicaltrials --from-ref=https://github.com/edgarrmondragon/tap-clinicaltrials/blob/main/plugin.yaml
+```
+
+#### From MeltanoHub
+
+Not yet available.
+
+### From PyPI
+
+```bash
+python3 -m pip install --upgrade tap-clinicaltrials
+```
+
+### With [pipx][pipx]
+
+```bash
+pipx install tap-clinicaltrials
+```
+
+[pipx]: https://github.com/pypa/pipx
+
+### From source
+
+```bash
+git clone https://github.com/edgarrmondragon/tap-clinicaltrials
+cd tap-clinicaltrials
+python3 -m pip install .
+```
+
 ## Usage
 
 You can easily run `tap-clinicaltrials` by itself or in a pipeline using [Meltano](https://meltano.com/).
