@@ -34,8 +34,10 @@ A full list of supported settings and capabilities is available by running: `tap
 #### Using a direct reference
 
 ```bash
-meltano add extractor tap-clinicaltrials --from-ref=https://github.com/edgarrmondragon/tap-clinicaltrials/blob/main/plugin.yaml
+meltano add extractor tap-clinicaltrials --from-ref=https://raw.githubusercontent.com/edgarrmondragon/tap-clinicaltrials/main/plugin.yaml
 ```
+
+Requires Meltano v3.1.0+.
 
 #### From MeltanoHub
 
