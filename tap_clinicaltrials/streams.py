@@ -60,6 +60,8 @@ class Studies(RESTStream[str]):
         if start_date := self.get_starting_replication_key_value(context):
             params["filter.advanced"] = f"AREA[protocolSection.statusModule.lastUpdateSubmitDate]RANGE[{start_date}, MAX]"
 
+        # TODO(edgarrmondragon): Support native field selection
+        # https://github.com/edgarrmondragon/tap-clinicaltrials/issues/1
         # fields = [".".join(field[1::2]) for field, selected in self.mask.items() if selected and field and field not in self.exclude_fields]
         # fields.extend(
         #     [
