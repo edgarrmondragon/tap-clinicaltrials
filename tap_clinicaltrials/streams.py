@@ -26,6 +26,7 @@ class Studies(RESTStream[str]):
 
     primary_keys: t.ClassVar[list[str]] = ["nctId"]
     replication_key = "lastUpdateSubmitDate"
+    is_sorted = True
 
     exclude_fields = (
         ("properties", "nctId"),
