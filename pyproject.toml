@@ -14,7 +14,7 @@ keywords = [
   "ELT",
   "singer.io",
 ]
-license = "Apache-2.0"
+license.file = "LICENSE"
 maintainers = [{ name = "Edgar Ramírez-Mondragón",  email = "edgarrmondragon@hey.com" }]
 authors = [{ name = "Edgar Ramírez-Mondragón",  email = "edgarrmondragon@hey.com" }]
 requires-python = ">=3.8"
@@ -46,9 +46,9 @@ optional-dependencies.typing = [
   "mypy",
   "types-requests",
 ]
-urls.Documentation = "https://github.com/edgarrmondragon/tap-clinicaltrials#readme"
-urls.Homepage = "https://github.com/edgarrmondragon/tap-clinicaltrials"
-urls.Repository = "https://github.com/edgarrmondragon/tap-clinicaltrials"
+urls.documentation = "https://github.com/edgarrmondragon/tap-clinicaltrials#readme"
+urls.homepage = "https://github.com/edgarrmondragon/tap-clinicaltrials"
+urls.repository = "https://github.com/edgarrmondragon/tap-clinicaltrials"
 scripts."tap-clinicaltrials" = "tap_clinicaltrials.tap:TapClinicalTrials.cli"
 
 [tool.hatch.version]
@@ -63,6 +63,11 @@ features = ["testing"]
 [tool.hatch.envs.test.scripts]
 integration = "pytest {args:tests}"
 dependencies = "deptry ."
+
+[tool.hatch.envs.all]
+template = "test"
+[[tool.hatch.envs.all.matrix]]
+python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
 [tool.hatch.envs.typing]
 features = ["testing", "typing"]
@@ -95,7 +100,6 @@ known-first-party = ["tap_clinicaltrials"]
 required-imports = ["from __future__ import annotations"]
 
 [tool.ruff.lint.per-file-ignores]
-"noxfile.py" = ["ANN"]
 "tests/*" = [
   "ANN201",  # missing-return-type-public-function
   "S101",    # assert
