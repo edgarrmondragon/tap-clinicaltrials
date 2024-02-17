@@ -140,7 +140,7 @@ Run integration tests:
 hatch run test:integration
 ```
 
-You can also test the `tap-tap-clinicaltrials` CLI interface directly:
+You can also test the `tap-clinicaltrials` CLI interface directly:
 
 ```bash
 hatch run sync:console -- --about --format=json
