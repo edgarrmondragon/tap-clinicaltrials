@@ -126,7 +126,6 @@ DEP002 = [
 addopts = "-vvv"
 filterwarnings = [
   "error",
-  "default:datetime.datetime.utcnow:DeprecationWarning:requests_cache.*",
   "default:No records were available to test:UserWarning",
   "default:Fields in transformed catalog but not in records:UserWarning",
 ]
