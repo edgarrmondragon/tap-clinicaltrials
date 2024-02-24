@@ -76,7 +76,6 @@ check = "mypy --strict {args:tap_clinicaltrials tests}"
 
 [tool.ruff]
 line-length = 160
-target-version = "py38"
 
 [tool.ruff.lint]
 ignore = [
