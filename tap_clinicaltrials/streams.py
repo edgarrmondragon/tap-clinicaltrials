@@ -11,6 +11,7 @@ from singer_sdk import RESTStream
 
 if t.TYPE_CHECKING:
     import requests
+    from singer_sdk.helpers.types import Context
 
 
 class Studies(RESTStream[str]):
@@ -40,7 +41,7 @@ class Studies(RESTStream[str]):
 
     def get_url_params(
         self,
-        context: dict[str, t.Any] | None,
+        context: Context | None,
         next_page_token: str | None,
     ) -> dict[str, t.Any] | str:
         """Return a dictionary of parameters to use in the request URL.
@@ -83,7 +84,7 @@ class Studies(RESTStream[str]):
     def post_process(
         self,
         row: dict[str, t.Any],
-        context: dict[str, t.Any] | None = None,  # noqa: ARG002
+        context: Context | None = None,  # noqa: ARG002
     ) -> dict[str, t.Any] | None:
         """Return a modified data row."""
         row["nctId"] = row["protocolSection"]["identificationModule"]["nctId"]
