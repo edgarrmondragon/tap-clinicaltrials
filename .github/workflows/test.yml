@@ -17,6 +17,10 @@ on:
       - pyproject.toml
       - .github/workflows/test.yml
       - .github/workflows/constraints.txt
+  workflow_dispatch:
+  schedule:
+  # Run weekly on Monday at 12:00 PM UTC
+  - cron: "0 12 * * 1"
 
 jobs:
   test:
@@ -36,8 +40,8 @@ jobs:
         - "3.12"
         - "3.13"
         include:
-        - { script: "test:dependencies", python-version: "3.12" }
-        - { script: "typing:check",      python-version: "3.12" }
+        - { script: "test:dependencies", python-version: "3.x" }
+        - { script: "typing:check",      python-version: "3.x" }
 
     steps:
     - uses: actions/checkout@v4
@@ -55,11 +59,12 @@ jobs:
 
     - name: Install Hatch
       run: |
-        pipx install --python '${{ steps.setup-python.outputs.python-path }}' hatch
+        pipx install hatch
         hatch --version
 
     - name: Run tests
       env:
+        HATCH_PYTHON: ${{ steps.setup-python.outputs.python-path }}
         TAP_CLINICALTRIALS_START_DATE: ${{ secrets.TAP_CLINICALTRIALS_START_DATE }}
       run: |
         hatch run ${{ matrix.script }}
