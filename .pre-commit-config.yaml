@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
       - id: check-json
         exclude: "\\.vscode/.*.json"
@@ -15,7 +15,7 @@ repos:
       - id: pyproject-fmt
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.6.8"
+    rev: "v0.6.9"
     hooks:
       - id: ruff
         name: Ruff lint
@@ -24,7 +24,7 @@ repos:
         name: Ruff format
 
   - repo: https://github.com/pre-commit/pre-commit
-    rev: v3.8.0
+    rev: v4.0.0
     hooks:
       - id: validate_manifest
 
