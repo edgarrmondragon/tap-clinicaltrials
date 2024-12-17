@@ -36,7 +36,7 @@ dynamic = [
 dependencies = [
   "requests>=2,<3",
   "requests-cache>=1,<2",
-  "singer-sdk~=0.42.1",
+  "singer-sdk~=0.43.1",
 ]
 optional-dependencies.dev = [
   "tap-clinicaltrials[testing,typing]",
@@ -143,6 +143,7 @@ filterwarnings = [
   "error",
   "default:No records were available to test:UserWarning",
   "default:Fields in transformed catalog but not in records:UserWarning",
+  "default:Use `http_method` instead:singer_sdk.helpers._compat.SingerSDKDeprecationWarning",
 ]
 
 [tool.mypy]
