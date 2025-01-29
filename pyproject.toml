@@ -37,7 +37,7 @@ dynamic = [
 dependencies = [
   "requests>=2,<3",
   "requests-cache>=1,<2",
-  "singer-sdk~=0.45.3",
+  "singer-sdk @ git+https://github.com/meltano/sdk.git",
 ]
 
 urls.Documentation = "https://github.com/edgarrmondragon/tap-clinicaltrials#readme"
@@ -53,12 +53,15 @@ dev = [
 testing = [
   "deptry>=0.12",
   "pytest>=7.4",
-  "singer-sdk[testing]",
+  "singer-sdk[testing] @ git+https://github.com/meltano/sdk.git",
 ]
 typing = [
   "mypy>=1",
   "types-requests>=2.32",
 ]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.version]
 source = "vcs"
