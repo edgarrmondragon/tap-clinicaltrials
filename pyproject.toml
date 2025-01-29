@@ -36,7 +36,7 @@ dynamic = [
 dependencies = [
   "requests>=2,<3",
   "requests-cache>=1,<2",
-  "singer-sdk~=0.43.1",
+  "singer-sdk @ git+https://github.com/meltano/sdk.git@main",
 ]
 optional-dependencies.dev = [
   "tap-clinicaltrials[testing,typing]",
@@ -44,7 +44,7 @@ optional-dependencies.dev = [
 optional-dependencies.testing = [
   "deptry>=0.12",
   "pytest>=7.4",
-  "singer-sdk[testing]",
+  "singer-sdk[testing] @ git+https://github.com/meltano/sdk.git@main",
 ]
 optional-dependencies.typing = [
   "mypy",
@@ -54,6 +54,9 @@ urls.Documentation = "https://github.com/edgarrmondragon/tap-clinicaltrials#read
 urls.Homepage = "https://github.com/edgarrmondragon/tap-clinicaltrials"
 urls.Repository = "https://github.com/edgarrmondragon/tap-clinicaltrials"
 scripts."tap-clinicaltrials" = "tap_clinicaltrials.tap:TapClinicalTrials.cli"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.version]
 source = "vcs"
