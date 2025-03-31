@@ -37,7 +37,7 @@ dynamic = [
 dependencies = [
   "requests>=2,<3",
   "requests-cache>=1,<2",
-  "singer-sdk~=0.44.2",
+  "singer-sdk~=0.45.3",
 ]
 optional-dependencies.dev = [
   "tap-clinicaltrials[testing,typing]",
