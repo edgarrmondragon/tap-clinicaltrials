@@ -766,15 +766,6 @@ wheels = [
 ]
 
 [[package]]
-name = "setuptools"
-version = "70.3.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/65/d8/10a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3/setuptools-70.3.0.tar.gz", hash = "sha256:f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5", size = 2333112, upload-time = "2024-07-09T16:08:06.251Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/ef/15/88e46eb9387e905704b69849618e699dc2f54407d8953cc4ec4b8b46528d/setuptools-70.3.0-py3-none-any.whl", hash = "sha256:fe384da74336c398e0d956d1cae0669bc02eed936cdb1d49b57de1990dc11ffc", size = 931070, upload-time = "2024-07-09T16:07:58.829Z" },
-]
-
-[[package]]
 name = "simpleeval"
 version = "1.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -859,7 +850,7 @@ wheels = [
 
 [[package]]
 name = "singer-sdk"
-version = "0.46.1"
+version = "0.46.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "backoff", marker = "python_full_version < '4'" },
@@ -884,9 +875,9 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "universal-pathlib" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f7/fa/d2ed1f2eb9312a542f437b7aaa6c01ad3127e3cf3e9fa452c3ac754b6577/singer_sdk-0.46.1.tar.gz", hash = "sha256:f45a44c4d98134ab29d1e6c81f4f35b8b32d586cc44dd0041bb38976acdeca9a", size = 1440112, upload-time = "2025-05-13T19:55:34.796Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d1/9d/dbd443f36f5d8330d0b9b8fc037d64069daf149ae62080ea33535dedb652/singer_sdk-0.46.3.tar.gz", hash = "sha256:14bcc8c76ea91c9df9ee734be2d5ee4a275a80a9bbbba4729e02928244d162b4", size = 1440161, upload-time = "2025-05-15T22:27:46.928Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/da/37/ecf1e871e56f03b67b8fd1ed4b369bf8b9c36a43bca0cf9544b95b0e0d3c/singer_sdk-0.46.1-py3-none-any.whl", hash = "sha256:b1d8d372cae7645a21fdb824d96e4aa0539c78968636bd2798db2566a83e6de9", size = 190184, upload-time = "2025-05-13T19:55:32.386Z" },
+    { url = "https://files.pythonhosted.org/packages/64/60/00b677ca6c76077e5515f3f04c04ba63643d186f73839b6a398df7b41280/singer_sdk-0.46.3-py3-none-any.whl", hash = "sha256:0fcb7c4bf29cb3b1ee74df7f3f0cc6eeee76a5064a4306293086edbd4e1b1d3f", size = 190182, upload-time = "2025-05-15T22:27:44.858Z" },
 ]
 
 [package.optional-dependencies]
@@ -1052,14 +1043,11 @@ wheels = [
 
 [[package]]
 name = "types-setuptools"
-version = "80.4.0.20250511"
+version = "80.7.0.20250516"
 source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "setuptools" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/87/f5/27854a6912bb6a13e42ab342409fadc5613bf9d36ac9a69e8211771c5e6a/types_setuptools-80.4.0.20250511.tar.gz", hash = "sha256:faa4159c9384e45b3b04218ca43ee3829efb6acc303e0ee561e47b3404423d32", size = 41205, upload-time = "2025-05-11T03:08:46.257Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/38/b1/a52ff157d80464beabb2f0e86881eca28fbc2d519f67ad2f274ef2fe9724/types_setuptools-80.7.0.20250516.tar.gz", hash = "sha256:57274b58e05434de42088a86074c9e630e5786f759cf9cc1e3015e886297ca21", size = 41313, upload-time = "2025-05-16T03:08:01.658Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ce/f5/9d47c996cb266092ec670edb24603eed527868d1cd68e1af29c81ea56f14/types_setuptools-80.4.0.20250511-py3-none-any.whl", hash = "sha256:972d7d947871cf7594263c764a9c2c2f137660c4ac3ad0cec1d4f1254ca8ae6a", size = 63110, upload-time = "2025-05-11T03:08:44.741Z" },
+    { url = "https://files.pythonhosted.org/packages/cf/64/179b136306127e755906d540558f1042ebae2e40744c0283a6e2b862a2a4/types_setuptools-80.7.0.20250516-py3-none-any.whl", hash = "sha256:c1da6c11698139c8307c6df5987592df940e956912c204e42d844ba821dd2741", size = 63262, upload-time = "2025-05-16T03:08:00.537Z" },
 ]
 
 [[package]]
