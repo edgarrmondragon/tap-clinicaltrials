@@ -38,7 +38,7 @@ dynamic = [
 dependencies = [
   "requests>=2,<3",
   "requests-cache>=1,<2",
-  "singer-sdk~=0.46.1",
+  "singer-sdk~=0.47.0",
 ]
 
 urls.Documentation = "https://github.com/edgarrmondragon/tap-clinicaltrials#readme"
