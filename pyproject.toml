@@ -114,6 +114,41 @@ filterwarnings = [
   "default:'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16:DeprecationWarning",
 ]
 
+[tool.tox]
+min_version = "4.22"
+env_list = [
+  "dependencies",
+  "typing",
+  "3.14",
+  "3.13",
+  "3.12",
+  "3.11",
+  "3.10",
+]
+
+[tool.tox.env_run_base]
+runner = "uv-venv-lock-runner"
+pass_env = [ "TAP_CLINICALTRIALS_*" ]
+dependency_groups = [ "testing" ]
+commands = [ [ "pytest", { replace = "posargs", default = [ "tests" ], extend = true } ] ]
+
+[tool.tox.env.dependencies]
+dependency_groups = [ "testing" ]
+commands = [ [ "deptry", "." ] ]
+
+[tool.tox.env.typing]
+dependency_groups = [ "testing", "typing" ]
+commands = [
+  [
+    "mypy",
+    "--strict",
+    { replace = "posargs", default = [
+      "tap_clinicaltrials",
+      "tests",
+    ], extend = true },
+  ],
+]
+
 [tool.mypy]
 warn_no_return = true
 warn_redundant_casts = true
