@@ -7,7 +7,7 @@ requires = [
 
 [project]
 name = "tap-clinicaltrials"
-description = "`tap-clinicaltrials` is a Singer tap for ClinicalTrials.gov, built with the Meltano SDK for Singer Taps."
+description = "Singer tap for ClinicalTrials.gov, built with the Meltano SDK for Singer Taps."
 readme = "README.md"
 keywords = [
   "ClinicalTrials.gov",
